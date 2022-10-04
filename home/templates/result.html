@@ -1,0 +1,171 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReZume</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}">
+</head>
+<body>
+  <form class="abc">
+    <div>
+        <h2 align='center'> {{resume_details.name}}</h2>
+        <div>
+          <p align='center'>{{resume_details.phoneno}},{{resume_details.email}}</p>
+          <p align='center'>{{resume_details.address}}</p>
+        </div>
+
+        <div>
+          <p align='right'><a href={{resume_details.linkedin}}> {{resume_details.linkedin}}</a></p>
+        </div>
+        <hr>
+
+        <div>
+          <h4>OBJECTIVE</h4>
+          <p class="n1">{{resume_details.objective}}</p>
+        </div>
+
+      <div>
+          <hr>
+          <h4>SKILLS</h4>
+          <p class="n1">{{resume_details.skillDetail}}</p>
+        </div>
+        <div>
+
+          {% if resume_details.university1 or resume_details.university2 or resume_details.intermediateSchool or resume_details.highSchool %}
+          <hr>
+
+          <h4>EDUCATION</h4>
+
+          {% if resume_details.university1 %}
+
+          <p class="n1">{{resume_details.degree1}} in {{resume_details.stream1}} --- (
+            {{resume_details.univStartingYear1}} - {{resume_details.univPassingYear1}} ) </p>
+          <p class="n1">{{resume_details.university1}} </p>
+          <p class="n1">{{resume_details.univResult1}} </p>
+
+          {%endif%}
+
+          {% if resume_details.university2 %}
+
+          <p class="n1">{{resume_details.degree2}} in {{resume_details.stream2}} --- (
+            {{resume_details.univStartingYear2}} - {{resume_details.univPassingYear2}} ) </p>
+          <p class="n1">{{resume_details.university2}} </p>
+          <p class="n1">{{resume_details.univResult2}} </p>
+
+          {%endif%}
+
+          {% if resume_details.intermediateSchool %}
+
+          <p class="n1"> Intermediate --- ( {{resume_details.intermediateStartingYear}} -
+            {{resume_details.intermediatePassingYear}} )</p>
+          <p class="n1"> {{resume_details.intermediateSchool}} </p>
+          <p class="n1"> {{resume_details.intermediateMarks}}</p>
+
+          {%endif%}
+
+          {% if resume_details.highSchool %}
+
+          <p class="n1"> High School --- ( {{resume_details.highSchoolStartingYear}} -
+            {{resume_details.highSchoolPassingYear}} )</p>
+          <p class="n1"> {{resume_details.highSchool}} </p>
+          <p class="n1"> {{resume_details.highSchoolMarks}}</p>
+
+          {%endif%}
+
+          {%endif%}
+        </div>
+      </div>
+
+      <div>
+          <hr>
+          <h4>LANGUAGES</h4>
+          <p class="n1">{{resume_details.languageDetail}}</p>
+      </div>
+      <div>
+
+      {% if resume_details.jobTitle1 or resume_details.jobTitle2 or resume_details.jobTitle3 or resume_details.projectTitle1 or resume_details.projectTitle2 or resume_details.projectTitle3 %}
+
+        <hr>
+
+        <h4>EXPERIENCE</h4>
+
+        {% if resume_details.jobTitle1 %}
+
+        <p class="n1">{{resume_details.jobTitle1}} --- ( {{resume_details.jobStartDate1}} -
+          {{resume_details.jobEndDate1}} ) </p>
+        <p class="n1">{{resume_details.jobDescription1}} </p>
+
+        {%endif%}
+        {% if resume_details.jobTitle2 %}
+
+        <p class="n1">{{resume_details.jobTitle2}} --- ( {{resume_details.jobStartDate2}} -
+          {{resume_details.jobEndDate2}} ) </p>
+        <p class="n1">{{resume_details.jobDescription2}} </p>
+
+        {%endif%}
+        {% if resume_details.jobTitle3 %}
+
+        <p class="n1">{{resume_details.jobTitle3}} --- ( {{resume_details.jobStartDate3}} -
+          {{resume_details.jobEndDate3}} ) </p>
+        <p class="n1">{{resume_details.jobDescription3}} </p>
+
+        {%endif%}
+
+        {% if resume_details.projectTitle1 %}
+
+        <p class="n1">{{resume_details.projectTitle1}} --- ( {{resume_details.projectStartDate1}} -
+          {{resume_details.projectEndDate1}} ) </p>
+        <p class="n1">{{resume_details.projectDescription1}} </p>
+
+        {%endif%}
+        {% if resume_details.projectTitle2 %}
+
+        <p class="n1">{{resume_details.projectTitle2}} --- ( {{resume_details.projectStartDate2}} -
+          {{resume_details.projectEndDate2}} ) </p>
+        <p class="n1">{{resume_details.projectDescription2}} </p>
+
+        {%endif%}
+        {% if resume_details.projectTitle3 %}
+
+        <p class="n1">{{resume_details.projectTitle3}} --- ( {{resume_details.projectStartDate3}} -
+          {{resume_details.projectEndDate3}} ) </p>
+        <p class="n1">{{resume_details.projectDescription3}} </p>
+
+        {%endif%}
+        {%endif%}
+
+      </div>
+
+      <div>
+
+        {% if resume_details.areaOfInterest %}
+
+        <hr>
+        <h4>AREAS OF INTEREST</h4>
+        <p class="n1">{{resume_details.areaOfInterest}} </p>
+
+        {%endif%}
+
+      </div>
+
+      <div>
+
+        {% if resume_details.extracurricularDetail %}
+
+        <hr>
+        <h4>EXTRA CURRICULAR ACTIVITIES</h4>
+        <p class="n1">{{resume_details.extracurricularDetail}} </p>
+
+        {%endif%}
+
+      </div>
+    </div>
+  </form>
+  <div>
+    <a href="http://127.0.0.1:8000/resumedetails/result" class="logo"><button class="button" onclick="window.print();return false;">Print</button></a><br>
+  </div>
+</body>
+</html>

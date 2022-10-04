@@ -1,0 +1,25 @@
+
+.n1 {
+    text-align: left;
+    padding:0px 10px 0px 60px;
+}
+
+.abc {
+    padding: 10px 60px 10px 60px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 15%;
+    opacity: 0.9;
+  }
+  
+  button:hover {
+    opacity:1;
+  }

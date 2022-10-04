@@ -1,0 +1,302 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReZume</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style1.css' %}">
+</head>
+<body>
+    <div class="header">
+        <a href="http://127.0.0.1:8000" class="logo"><font color="#00008B">R</font>e<font color="#00008B">Z</font>ume</a>
+    </div>
+    <form action="result" method="post" style="border:1px solid #ccc">
+        {% csrf_token %}
+        <div class="container">
+        <h1 align="center">Please fill in the details to create a free resume</h1>
+        <label for="name">Full Name<font color="#FF2626">*</font></label>
+        <div>
+            <input type="text" id="name" name="name"
+                placeholder="Enter your full name" required>
+        </div>
+        <label for="objective">Objective<font color="#FF2626">*</font></label>
+        <div>
+            <textarea id="objective" name="objective" cols="135" rows="10"
+                placeholder="Enter something about you" required></textarea>
+        </div>
+        <label for="address">Address<font color="#FF2626">*</font></label>
+        <div>
+            <input type="text" id="address" name="address"
+                placeholder="Enter your address" required>
+        </div>
+        <label for="tel">Phone Number<font color="#FF2626">*</font></label>
+        <div>
+            <input type="number" id="phoneno" name="phoneno"
+                placeholder="Enter your phone number" required>
+        </div>
+        <label for="email">Email ID<font color="#FF2626">*</font></label>
+        <div>
+            <input type="email" id="email" name="email"
+                placeholder="Enter your email id" required>
+        </div>
+        <label for="linkedin">Linkedin Profile link</label>
+        <div>
+            <input type="url" id="linkedin" name="linkedin"
+                placeholder="Enter your linkedin profile link">
+        </div>
+        <label for="university1">University Name</label>
+        <div>
+            <input type="text" id="university1" name="university1"
+                placeholder="Enter your University Name">
+        </div>
+        <label for="degree1">Degree</label>
+        <div>
+            <input type="text" id="degree1" name="degree1"
+                placeholder="Enter your degree">
+        </div>
+        <label for="stream1">Stream</label>
+        <div>
+            <input type="text" id="stream1" name="stream1"
+                placeholder="Enter your Stream">
+        </div>
+        <label for="currentYear1">University Current Year</label>
+        <div>
+            <input type="text" id="currentYear1" name="currentYear1"
+                placeholder="Enter the current year which you are studying in">
+        </div>
+        <label for="univStartingYear1">University Starting Year</label>
+        <div>
+            <input type="month" id="univStartingYear1" name="univStartingYear1"
+                placeholder="Enter your university starting year">
+        </div>
+        <label for="univPassingYear1">University Passing Year</label>
+        <div>
+            <input type="month" id="univPassingYear1" name="univPassingYear1"
+                placeholder="Enter your university passing year">
+        </div>
+        <label for="univResult1">University Result</label>
+        <div>
+            <input type="text" id="univResult1" name="univResult1"
+                placeholder="Enter your university score">
+        </div>
+        <label for="university2">University Name</label>
+        <div>
+            <input type="text" id="university2" name="university2"
+                placeholder="Enter your University Name">
+        </div>
+        <label for="degree2">Degree</label>
+        <div>
+            <input type="text" id="degree2" name="degree2"
+                placeholder="Enter your degree">
+        </div>
+        <label for="stream2">Stream</label>
+        <div>
+            <input type="text" id="stream2" name="stream2"
+                placeholder="Enter your Stream">
+        </div>
+        <label for="currentYear2">University Current Year</label>
+        <div>
+            <input type="text" id="currentYear" name="currentYear2"
+                placeholder="Enter the current year which you are studying in">
+        </div>
+        <label for="univStartingYear2">University Starting Year</label>
+        <div>
+            <input type="month" id="univStartingYear2" name="univStartingYear2"
+                placeholder="Enter your university starting year">
+        </div>
+        <label for="univPassingYear2">University Passing Year</label>
+        <div>
+            <input type="month" id="univPassingYear2" name="univPassingYear2"
+                placeholder="Enter your university passing year">
+        </div>
+        <label for="univResult2">University Result</label>
+        <div>
+            <input type="text" id="univResult2" name="univResult2"
+                placeholder="Enter your university score">
+        </div>
+        <label for="intermediateSchool">Intermediate School Name</label>
+        <div>
+            <input type="text" id="intermediateSchool" name="intermediateSchool"
+                placeholder="Enter your intermediate school name">
+        </div>
+        <label for="intermediateStartingYear">Intermediate Starting Year</label>
+        <div>
+            <input type="month" id="intermediateStartingYear"
+                name="intermediateStartingYear" placeholder="Enter your intermediate starting year">
+        </div>
+        <label for="intermediatePassingYear">Intermediate Passing Year</label>
+        <div>
+            <input type="month" id="intermediatePassingYear"
+                name="intermediatePassingYear" placeholder="Enter your intermediate passing year">
+        </div>
+        <label for="intermediateMarks">Intermediate Marks</label>
+        <div>
+            <input type="text" id="intermediateMarks" name="intermediateMarks"
+                placeholder="Enter your intermediate marks">
+        </div>
+        <label for="highSchool">High School Name</label>
+        <div>
+            <input type="text" id="highSchool" name="highSchool"
+                placeholder="Enter your high school name">
+        </div>
+        <label for="highSchoolStartingYear">High School Starting Year</label>
+        <div>
+            <input type="month" id="highSchoolStartingYear"
+                name="highSchoolStartingYear" placeholder="Enter your high school starting year">
+        </div>
+        <label for="highSchoolPassingYear">High School Passing Year</label>
+        <div>
+            <input type="month" id="highSchoolPassingYear"
+                name="highSchoolPassingYear" placeholder="Enter your high school passing year">
+        </div>
+        <label for="highSchoolMarks">High School Marks</label>
+        <div>
+            <input type="text" id="highSchoolMarks" name="highSchoolMarks"
+                placeholder="Enter your high school marks">
+        </div>
+        <label for="jobTitle1">Job Title</label>
+        <div>
+            <input type="text" id="jobTitle1" name="jobTitle1"
+                placeholder="Enter your job details">
+        </div>
+        <label for="jobStartDate1">Job Starting Date</label>
+        <div>
+            <input type="month" id="jobStartDate1" name="jobStartDate1"
+                placeholder="Enter your job's starting date">
+        </div>
+        <label for="jobEndDate1">Job Ending Date</label>
+        <div>
+            <input type="month" id="jobEndDate1" name="jobEndDate1"
+                placeholder="Enter your job's ending date">
+        </div>
+        <label for="jobDescription1">Job Description</label>
+        <div>
+            <textarea id="jobDescription1" name="jobDescription1" cols="135" rows="10" class="form-control"
+                placeholder="Enter your job description"></textarea>
+        </div>
+        <label for="jobTitle2">Job Title</label>
+        <div>
+            <input type="text" id="jobTitle2" name="jobTitle2"
+                placeholder="Enter your job details">
+        </div>
+        <label for="jobStartDate2">Job Starting Date</label>
+        <div>
+            <input type="month" id="jobStartDate2" name="jobStartDate2"
+                placeholder="Enter your job's starting date">
+        </div>
+        <label for="jobEndDate2">Job Ending Date</label>
+        <div>
+            <input type="month" id="jobEndDate2" name="jobEndDate2"
+                placeholder="Enter your job's ending date">
+        </div>
+        <label for="jobDescription2">Job Description</label>
+        <div>
+            <textarea id="jobDescription2" name="jobDescription2" cols="135" rows="10" class="form-control"
+                placeholder="Enter your job description"></textarea>
+        </div>
+        <label for="jobTitle3">Job Title</label>
+        <div>
+            <input type="text" id="jobTitle3" name="jobTitle3"
+                placeholder="Enter your job details">
+        </div>
+        <label for="jobStartDate3">Job Starting Date</label>
+        <div>
+            <input type="month" id="jobStartDate3" name="jobStartDate3"
+                placeholder="Enter your job's starting date">
+        </div>
+        <label for="jobEndDate3">Job Ending Date</label>
+        <div>
+            <input type="month" id="jobEndDate3" name="jobEndDate3"
+                placeholder="Enter your job's ending date">
+        </div>
+        <label for="jobDescription3">Job Description</label>
+        <div>
+            <textarea id="jobDescription3" name="jobDescription3" cols="135" rows="10" class="form-control"
+                placeholder="Enter your job description"></textarea>
+        </div>
+        <label for="projectTitle1">Project Title</label>
+        <div>
+            <input type="text" id="projectTitle1" name="projectTitle1"
+                placeholder="Enter your project title">
+        </div>
+        <label for="projectStartDate1">Project Starting Date</label>
+        <div>
+            <input type="month" id="projectStartDate1" name="projectStartDate1"
+                placeholder="Enter your project's starting date">
+        </div>
+        <label for="projectEndDate1">Project Ending Date</label>
+        <div>
+            <input type="month" id="projectEndDate1" name="projectEndDate1"
+                placeholder="Enter your project's ending date">
+        </div>
+        <label for="projectDescription1">Project Description</label>
+        <div>
+            <textarea id="projectDescription1" name="projectDescription1" cols="135" rows="10"
+                class="form-control" placeholder="Enter your project description"></textarea>
+        </div>
+        <label for="projectTitle2">Project Title</label>
+        <div>
+            <input type="text" id="projectTitle2" name="projectTitle2"
+                placeholder="Enter your project title">
+        </div>
+        <label for="projectStartDate2">Project Starting Date</label>
+        <div>
+            <input type="month" id="projectStartDate2" name="projectStartDate2"
+                placeholder="Enter your project's starting date">
+        </div>
+        <label for="projectEndDate2">Project Ending Date</label>
+        <div>
+            <input type="month" id="projectEndDate2" name="projectEndDate2"
+                placeholder="Enter your project's ending date">
+        </div>
+        <label for="projectDescription2">Project Description</label>
+        <div>
+            <textarea id="projectDescription2" name="projectDescription2" cols="135" rows="10"
+                class="form-control" placeholder="Enter your project description"></textarea>
+        </div>
+        <label for="projectTitle3">Project Title</label>
+        <div>
+            <input type="text" id="projectTitle3" name="projectTitle3"
+                placeholder="Enter your project title">
+        </div>
+        <label for="projectStartDate3">Project Starting Date</label>
+        <div>
+            <input type="month" id="projectStartDate3" name="projectStartDate3"
+                placeholder="Enter your project's starting date">
+        </div>
+        <label for="projectEndDate3">Project Ending Date</label>
+        <div>
+            <input type="month" id="projectEndDate3" name="projectEndDate3"
+                placeholder="Enter your project's ending date">
+        </div>
+        <label for="projectDescription3">Project Description</label>
+        <div>
+            <textarea id="projectDescription3" name="projectDescription3" cols="135" rows="10"
+                class="form-control" placeholder="Enter your project description"></textarea>
+        </div>
+        <label for="skillDetail"> Skills<font color="#FF2626">*</font></label>
+        <div>
+            <textarea id="skillDetail" name="skillDetail" cols="135" rows="10" class="form-control"
+                placeholder="Enter your skills" required></textarea>
+        </div>
+        <label for="languageDetail">Languages<font color="#FF2626">*</font></label>
+        <div>
+            <textarea id="languageDetail" name="languageDetail" cols="135" rows="10" class="form-control"
+                placeholder="Enter the languages that you know" required></textarea>
+        </div>
+        <label for="areaOfInterest">Area of Interest</label>
+        <div>
+            <input type="text" id="areaOfInterest" name="areaOfInterest"
+                placeholder="Enter your areas of interest">
+        </div>
+        <label for="extracurricularDetail">Extra curricular activities</label>
+        <div>
+            <input type="text" id="extracurricularDetail" name="extracurricularDetail"
+                placeholder="Enter the extra curricular activities you took part in">
+        </div>
+        <button type="submit">SUBMIT</button>
+    </form>
+</body>
+</html>
